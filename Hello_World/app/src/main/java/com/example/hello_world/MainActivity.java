@@ -11,14 +11,6 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
-  public class User {
-    public User(String a, String b) {
-      this.a = a;
-      this.b = b;
-    }
-    public String a;
-    public String b;
-  };
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
