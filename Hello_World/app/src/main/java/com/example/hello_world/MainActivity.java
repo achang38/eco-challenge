@@ -11,20 +11,24 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
-  private class User {
+  public class User {
     public User(String a, String b) {
       this.a = a;
       this.b = b;
     }
-    private String a;
-    private String b;
+    public String a;
+    public String b;
   };
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("message");
+    DatabaseReference myRef = database.getReference("users");
 
-    myRef.setValue("Hello, World!");
+    Map<String, User> users = new HashMap<>();
+    users.put("alanisawesome", new User("June 23, 1912", "Alan Turing"));
+    users.put("gracehop", new User("December 9, 1906", "Grace Hopper"));
+
+    myRef.setValue(users);
 
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
