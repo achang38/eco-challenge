@@ -1,11 +1,11 @@
 package com.example.hello_world;
 
 public class User {
-    public String a;
-    public String b;
+    public String name;
+    public int score;
 
-    public User(String a, String b) {
-        this.a = a;
-        this.b = b;
+    public User(String name, int score) {
+        this.name = name;
+        this.score = score;
     }
 };
