@@ -46,7 +46,6 @@ public class AuthenticationActivity extends AppCompatActivity {
         List<AuthUI.IdpConfig> providers = Arrays.asList(
                 new AuthUI.IdpConfig.EmailBuilder().build());
 
-// Create and launch sign-in intent
         startActivityForResult(
                 AuthUI.getInstance()
                         .createSignInIntentBuilder()
@@ -63,11 +62,8 @@ public class AuthenticationActivity extends AppCompatActivity {
             IdpResponse response = IdpResponse.fromResultIntent(data);
 
             if (resultCode == RESULT_OK) {
-                // Successfully signed in
                 final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 final DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("users");
-                //Log.d("TAG","SUCCESS: "+user.getDisplayName());
-                //Log.d("TAG","VALUE: "+myRef.child(user.getUid()).getClass());
                 myRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot snapshot) {
@@ -83,11 +79,6 @@ public class AuthenticationActivity extends AppCompatActivity {
                         Log.w(TAG, "Failed to read value.", error.toException());
                     }
                 });
-            } else {
-                // Sign in failed. If response is null the user canceled the
-                // sign-in flow using the back button. Otherwise check
-                // response.getError().getErrorCode() and handle the error.
-                // ...
             }
         }
     }
