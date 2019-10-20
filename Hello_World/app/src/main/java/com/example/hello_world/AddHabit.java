@@ -28,7 +28,6 @@ public class AddHabit extends AppCompatActivity {
         final TextView textView7 = findViewById(R.id.textView7);
         Button button_submit = findViewById(R.id.button_submit2);
 
-
         final SeekBar seekBar2 = findViewById(R.id.seekBar2);
         seekBar2.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
