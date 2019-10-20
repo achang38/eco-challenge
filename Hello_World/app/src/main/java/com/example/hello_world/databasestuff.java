@@ -1,4 +1,4 @@
-package com.example.hello_world;
+/*package com.example.hello_world;
 
 import android.util.Log;
 
@@ -57,4 +57,4 @@ public class databasestuff {
     }
     return temp;
   }
-};
+};*/
