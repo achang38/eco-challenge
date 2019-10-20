@@ -19,6 +19,8 @@
         <activity android:name=".StartActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".AddEventActivity" />
+        <activity android:name=".AddCommute" />
+        <activity android:name=".AddHabit" />
     </application>
 
 </manifest>

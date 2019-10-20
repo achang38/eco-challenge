@@ -74,17 +74,12 @@ public class MainActivity extends AppCompatActivity {
             t.setText(String.valueOf(users.get(i).getTotalScore()));
         }
 
-
-
-
         //progress bars.................
         for (int i = 0; i < rowUsers.length; ++i) {
           ProgressBar pb1 = findViewById(progressBars[i]);
           pb1.setMax(scoreGoal);
           pb1.setProgress(users.get(i).getTotalScore());
         }
-
-
 
       }
 
