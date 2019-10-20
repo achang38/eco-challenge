@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.hello_world">
+    package="com.example.eco_challenge">
 
     <application
         android:allowBackup="true"
@@ -9,18 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AuthenticationActivity">
+        <activity android:name="com.example.eco_challenge.AuthenticationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".StartActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".AddEventActivity" />
-        <activity android:name=".AddCommute" />
-        <activity android:name=".AddHabit" />
+        <activity android:name="com.example.eco_challenge.StartActivity" />
+        <activity android:name="com.example.eco_challenge.MainActivity" />
+        <activity android:name="com.example.eco_challenge.AddEventActivity" />
+        <activity android:name="com.example.eco_challenge.AddCommute" />
+        <activity android:name="com.example.eco_challenge.AddHabit" />
     </application>
 
 </manifest>
