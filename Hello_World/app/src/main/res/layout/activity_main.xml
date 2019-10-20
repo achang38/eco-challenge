@@ -24,15 +24,14 @@
         android:layout_width="wrap_content"
 
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:text="Leaderboard"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.616" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TableLayout
         android:id="@+id/tableLayout"
@@ -320,5 +319,14 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/progressBar4" />
+
+    <TextView
+        android:id="@+id/scoreGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar1"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
