@@ -35,7 +35,7 @@ public class StartActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 FirebaseUser currUser = FirebaseAuth.getInstance().getCurrentUser();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    if(snapshot.getKey() == currUser.getUid()) {
+                    if(snapshot.getKey().equals(currUser.getUid())) {
                         User user = snapshot.getValue(User.class);
                         TextView t = findViewById(R.id.userInfo);
                         t.setText(String.valueOf(user.getDailyScore()));
