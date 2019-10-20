@@ -28,9 +28,12 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.ProgressBar;
 
 
 public class MainActivity extends AppCompatActivity {
+
+  private static int scoreGoal = 250;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +51,11 @@ public class MainActivity extends AppCompatActivity {
         for(int i = 0; i < users.size(); i++){
           Log.d(TAG,"Value: "+users.get(i).getName());
         }
+
         int[] rowUsers = {R.id.user1,R.id.user2,R.id.user3,R.id.user4,R.id.user5};
         int[] rowDaily = {R.id.user1daily,R.id.user2daily,R.id.user3daily,R.id.user4daily,R.id.user5daily};
+        int[] rowTotal = {R.id.user1total, R.id.user2total, R.id.user3total, R.id.user4total, R.id.user5total};
+        int[] progressBars = {R.id.progressBar1, R.id.progressBar2, R.id.progressBar3,R.id.progressBar4, R.id.progressBar5};
         for(int i = 0; i < rowUsers.length; i++){
           TextView t = findViewById(rowUsers[i]);
           if(i < users.size())
@@ -60,6 +66,24 @@ public class MainActivity extends AppCompatActivity {
           if(i < users.size())
             t.setText(String.valueOf(users.get(i).getDailyScore()));
         }
+        for(int i = 0; i < rowTotal.length; i++){
+          TextView t = findViewById(rowTotal[i]);
+          if(i < users.size())
+            t.setText(String.valueOf(users.get(i).getTotalScore()));
+        }
+
+
+
+
+        //progress bars.................
+        for (int i = 0; i < rowUsers.length; ++i) {
+          ProgressBar pb1 = findViewById(progressBars[i]);
+          pb1.setMax(scoreGoal);
+          pb1.setProgress(users.get(i).getTotalScore());
+        }
+
+
+
       }
 
       @Override
@@ -90,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
         goToStartActivity(v);
       }
     });
+
   }
 
   public void goToStartActivity(View view){

@@ -4,21 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:visibility="visible"
     tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.154" />
 
     <Button
         android:id="@+id/button"
@@ -45,7 +32,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.7" />
+        app:layout_constraintVertical_bias="0.616" />
 
     <TableLayout
         android:id="@+id/tableLayout"
@@ -94,11 +81,20 @@
 
         <TableRow>
 
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#004D3A3A"
+                app:srcCompat="@android:color/holo_blue_dark"
+                tools:srcCompat="@android:color/holo_blue_dark" />
+
             <TextView
+                android:id="@+id/key1"
                 android:layout_width="60dp"
                 android:layout_column="1"
+                android:background="#FF9800"
                 android:padding="3dip"
-                android:text="row2"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <TextView
@@ -106,7 +102,6 @@
                 android:layout_width="100dp"
                 android:layout_column="1"
                 android:padding="3dip"
-                android:text="1"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <TextView
@@ -114,8 +109,13 @@
                 android:layout_width="120dp"
                 android:layout_column="1"
                 android:padding="3dip"
-                android:text="3"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/user1total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
 
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -125,10 +125,11 @@
         <TableRow>
 
             <TextView
+                android:id="@+id/key2"
                 android:layout_width="60dp"
                 android:layout_column="1"
+                android:background="#FFC107"
                 android:padding="3dip"
-                android:text="row3"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <TextView
@@ -136,7 +137,6 @@
                 android:layout_width="100dp"
                 android:layout_column="1"
                 android:padding="3dip"
-                android:text="2"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <TextView
@@ -144,8 +144,13 @@
                 android:layout_width="120dp"
                 android:layout_column="1"
                 android:padding="3dip"
-                android:text="3"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/user2total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
 
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -155,18 +160,19 @@
         <TableRow>
 
             <TextView
+                android:id="@+id/key3"
                 android:layout_width="60dp"
                 android:layout_column="1"
+                android:background="#4CAF50"
                 android:padding="3dip"
-                android:text="row4"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <TextView
                 android:id="@+id/user3"
                 android:layout_width="100dp"
+                android:layout_height="match_parent"
                 android:layout_column="1"
                 android:padding="3dip"
-                android:text="3"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <TextView
@@ -174,8 +180,13 @@
                 android:layout_width="120dp"
                 android:layout_column="1"
                 android:padding="3dip"
-                android:text="3"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/user3total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
 
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -184,10 +195,11 @@
         <TableRow>
 
             <TextView
+                android:id="@+id/key4"
                 android:layout_width="60dp"
                 android:layout_column="1"
+                android:background="#673AB7"
                 android:padding="3dip"
-                android:text="row4"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <TextView
@@ -195,7 +207,6 @@
                 android:layout_width="100dp"
                 android:layout_column="1"
                 android:padding="3dip"
-                android:text="3"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <TextView
@@ -203,8 +214,13 @@
                 android:layout_width="120dp"
                 android:layout_column="1"
                 android:padding="3dip"
-                android:text="3"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/user4total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
 
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -213,10 +229,11 @@
         <TableRow>
 
             <TextView
+                android:id="@+id/key5"
                 android:layout_width="60dp"
                 android:layout_column="1"
+                android:background="#03A9F4"
                 android:padding="3dip"
-                android:text="row4"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <TextView
@@ -224,7 +241,6 @@
                 android:layout_width="100dp"
                 android:layout_column="1"
                 android:padding="3dip"
-                android:text="3"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <TextView
@@ -232,12 +248,77 @@
                 android:layout_width="120dp"
                 android:layout_column="1"
                 android:padding="3dip"
-                android:text="3"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:id="@+id/user5total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
 
             android:layout_width="match_parent"
             android:layout_height="match_parent"
         </TableRow>
     </TableLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="316dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="136dp"
+        android:background="#FF9800"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="316dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="12dp"
+        android:background="#FFC107"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar1" />
+
+    <ProgressBar
+        android:id="@+id/progressBar3"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="316dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="12dp"
+        android:background="#8BC34A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar2" />
+
+    <ProgressBar
+        android:id="@+id/progressBar4"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="316dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="12dp"
+        android:background="#673AB7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar3" />
+
+    <ProgressBar
+        android:id="@+id/progressBar5"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="316dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="12dp"
+        android:background="#00BCD4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
