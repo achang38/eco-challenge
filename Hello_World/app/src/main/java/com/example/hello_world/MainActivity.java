@@ -50,9 +50,6 @@ public class MainActivity extends AppCompatActivity {
           users.add(user);
         }
         Collections.sort(users,new UserComparator());
-        for(int i = 0; i < users.size(); i++){
-          Log.d(TAG,"Value: "+users.get(i).getName());
-        }
 
         int[] rowUsers = {R.id.user1,R.id.user2,R.id.user3,R.id.user4,R.id.user5};
         int[] rowDaily = {R.id.user1daily,R.id.user2daily,R.id.user3daily,R.id.user4daily,R.id.user5daily};
@@ -88,19 +85,9 @@ public class MainActivity extends AppCompatActivity {
 
       @Override
       public void onCancelled(DatabaseError error) {
-        // Failed to read value
         Log.w(TAG, "Failed to read value.", error.toException());
       }
     });
-
-    // Create users
- /*   for(int i = 1; i < 6; i++){
-      //int randomId = new Random().nextInt();
-      //int randomUser = new Random().nextInt();
-      //int randomScore = new Random().nextInt();
-      User user = new User("User"+String.valueOf(i), 100+i*10, 100+i*10);
-      myRef.child(String.valueOf(i)).setValue(user);//String.valueOf(randomId)
-    }*/
 
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
