@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="123f73c4-eb3f-4f09-ae3a-a72facd66ce4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/databasestuff.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/databasestuff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/databasestuff.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hello_world/databasestuff.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/hello_world/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hello_world/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/hello_world/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hello_world/User.java" afterDir="false" />
     </list>
@@ -44,16 +42,16 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/hello_world/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="36">
+              <caret line="25" selection-start-line="25" selection-end-line="39" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/databasestuff.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/hello_world/databasestuff.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
+            <state relative-caret-position="468">
               <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -76,7 +74,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/hello_world/User.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="72">
-              <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+              <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
               <folding>
                 <element signature="e#235#236#0" expanded="true" />
                 <element signature="e#261#262#0" expanded="true" />
@@ -179,19 +177,6 @@
             </path>
             <path>
               <item name="Hello_World" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="example" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Hello_World" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="example" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="hello_world" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Hello_World" type="1abcf292:AndroidViewProjectNode" />
               <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
             </path>
           </expand>
@@ -207,6 +192,11 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.hello_world" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -308,7 +298,7 @@
       <window_info id="Designer" order="6" />
       <window_info id="Resources Explorer" order="7" />
       <window_info id="Capture Tool" order="8" />
-      <window_info anchor="bottom" id="Run" order="0" weight="0.3296355" />
+      <window_info anchor="bottom" id="Run" order="0" visible="true" weight="0.3296355" />
       <window_info anchor="bottom" id="Logcat" order="1" />
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" />
@@ -336,9 +326,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/databasestuff.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/hello_world/databasestuff.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
+        <state relative-caret-position="468">
           <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -353,7 +343,7 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/hello_world/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
-          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
           <folding>
             <element signature="e#235#236#0" expanded="true" />
             <element signature="e#261#262#0" expanded="true" />
@@ -365,8 +355,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/hello_world/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="36">
+          <caret line="25" selection-start-line="25" selection-end-line="39" selection-end-column="7" />
         </state>
       </provider>
     </entry>

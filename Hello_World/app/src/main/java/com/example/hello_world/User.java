@@ -1,8 +1,8 @@
 package com.example.hello_world;
 
 public class User {
-    private String name;
-    private int score;
+    public String name;
+    public int score;
 
     public User(String name, int score) {
         this.name = name;
