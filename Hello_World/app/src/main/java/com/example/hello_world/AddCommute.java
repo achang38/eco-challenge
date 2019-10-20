@@ -16,14 +16,12 @@ public class AddCommute extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_commute);
 
-
         final RadioButton bike = findViewById(R.id.commute_bike);
         final RadioButton carpool = findViewById(R.id.commute_carpool);
         final RadioButton pub_transport = findViewById(R.id.commute_pub_transport);
         final RadioButton walk = findViewById(R.id.commute_walk);
         final TextView textView6 = findViewById(R.id.textView6);
         Button button_submit = findViewById(R.id.button_submit);
-
 
         final SeekBar seekBar = findViewById(R.id.seekBar);
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
