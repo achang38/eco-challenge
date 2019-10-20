@@ -16,6 +16,13 @@ import java.util.Random;
 
 import static android.content.ContentValues.TAG;
 
+
+//Allen's import statements
+import android.content.Intent;
+import android.view.View;
+import android.widget.Button;
+
+
 public class MainActivity extends AppCompatActivity {
 
   @Override
@@ -49,5 +56,20 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
+    //Allen's code
+    Button button1 = findViewById(R.id.button);
+    button1.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        goToStartActivity(v);
+      }
+    });
   }
+
+  public void goToStartActivity(View view){
+
+    Intent intent = new Intent(this, StartActivity.class);
+    startActivity(intent);
+  }
+
 }
