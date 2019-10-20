@@ -88,6 +88,7 @@ public class AddCommute extends AppCompatActivity {
                     return Transaction.success(mutableData);
                 }
                 user.dailyScore += value;
+                user.totalScore += value;
                 mutableData.setValue(user);
                 return Transaction.success(mutableData);
             }
