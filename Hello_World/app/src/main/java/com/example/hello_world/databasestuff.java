@@ -1,4 +1,4 @@
-package com.example;
+package com.example.hello_world;
 
 import android.util.Log;
 
