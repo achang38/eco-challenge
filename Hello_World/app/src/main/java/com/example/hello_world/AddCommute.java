@@ -10,6 +10,15 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.MutableData;
+import com.google.firebase.database.Transaction;
+
 public class AddCommute extends AppCompatActivity {
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -28,8 +37,6 @@ public class AddCommute extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 textView6.setText("Minutes: " + progress);
-
-
             }
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
@@ -44,18 +51,22 @@ public class AddCommute extends AppCompatActivity {
             public void onClick(View v) {
                 if (bike.isChecked()) {
                     int points = seekBar.getProgress()/5;
+                    updateScore(points);
                     goToStart(v);
                 }
                 else if (carpool.isChecked()) {
                     int points = seekBar.getProgress()/6;
+                    updateScore(points);
                     goToStart(v);
                 }
                 else if (pub_transport.isChecked()) {
                     int points = seekBar.getProgress()/7;
+                    updateScore(points);
                     goToStart(v);
                 }
                 else if (walk.isChecked()) {
                     int points = seekBar.getProgress()/8;
+                    updateScore(points);
                     goToStart(v);
                 }
                 else {
@@ -64,6 +75,28 @@ public class AddCommute extends AppCompatActivity {
             }
         });
     }
+
+    public static void updateScore(final int value) {
+        FirebaseUser currUser = FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference userRef = rootRef.child("users").child(currUser.getUid());
+        userRef.runTransaction(new Transaction.Handler() {
+            @Override
+            public Transaction.Result doTransaction(MutableData mutableData) {
+                User user = mutableData.getValue(User.class);
+                if (user == null) {
+                    return Transaction.success(mutableData);
+                }
+                user.dailyScore += value;
+                mutableData.setValue(user);
+                return Transaction.success(mutableData);
+            }
+
+            @Override
+            public void onComplete(DatabaseError databaseError, boolean b, DataSnapshot dataSnapshot) {}
+        });
+    }
+
     public void goToStart(View view) {
         Intent intent = new Intent(this,StartActivity.class);
         startActivity(intent);

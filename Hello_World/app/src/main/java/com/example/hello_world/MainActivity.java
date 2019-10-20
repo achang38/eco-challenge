@@ -107,7 +107,6 @@ public class MainActivity extends AppCompatActivity {
     button1.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        //updateScore(2);
         goToStartActivity(v);
       }
     });
@@ -127,26 +126,4 @@ public class MainActivity extends AppCompatActivity {
       else return -1;
     }
   }
-
-  public static void updateScore(final int value) {
-    FirebaseUser currUser = FirebaseAuth.getInstance().getCurrentUser();
-    DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
-    DatabaseReference userRef = rootRef.child("users").child(currUser.getUid());
-    userRef.runTransaction(new Transaction.Handler() {
-      @Override
-      public Transaction.Result doTransaction(MutableData mutableData) {
-        User user = mutableData.getValue(User.class);
-        if (user == null) {
-          return Transaction.success(mutableData);
-        }
-        user.dailyScore += value;
-        mutableData.setValue(user);
-        return Transaction.success(mutableData);
-      }
-
-      @Override
-      public void onComplete(DatabaseError databaseError, boolean b, DataSnapshot dataSnapshot) {}
-    });
-  }
-
 }

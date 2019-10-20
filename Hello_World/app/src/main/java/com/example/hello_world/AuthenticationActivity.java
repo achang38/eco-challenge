@@ -27,7 +27,7 @@ import java.util.List;
 
 import static android.content.ContentValues.TAG;
 
-public class SignIn extends AppCompatActivity {
+public class AuthenticationActivity extends AppCompatActivity {
     private static final int RC_SIGN_IN = 0;
 
     @Override
