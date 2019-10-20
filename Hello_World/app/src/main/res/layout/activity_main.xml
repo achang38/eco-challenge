@@ -102,11 +102,21 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <TextView
+                android:id="@+id/user1"
                 android:layout_width="100dp"
                 android:layout_column="1"
                 android:padding="3dip"
                 android:text="1"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@+id/user1daily"
+                android:layout_width="120dp"
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="3"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
 
@@ -122,11 +132,21 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <TextView
+                android:id="@+id/user2"
                 android:layout_width="100dp"
                 android:layout_column="1"
                 android:padding="3dip"
                 android:text="2"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@+id/user2daily"
+                android:layout_width="120dp"
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="3"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
 
@@ -142,11 +162,79 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <TextView
+                android:id="@+id/user3"
                 android:layout_width="100dp"
                 android:layout_column="1"
                 android:padding="3dip"
                 android:text="3"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@+id/user3daily"
+                android:layout_width="120dp"
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="3"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="row4"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@+id/user4"
+                android:layout_width="100dp"
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="3"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@+id/user4daily"
+                android:layout_width="120dp"
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="3"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="row4"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@+id/user5"
+                android:layout_width="100dp"
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="3"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@+id/user5daily"
+                android:layout_width="120dp"
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="3"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
         </TableRow>

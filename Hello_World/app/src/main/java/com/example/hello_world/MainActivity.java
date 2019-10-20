@@ -10,7 +10,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
@@ -21,6 +25,7 @@ import static android.content.ContentValues.TAG;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -33,9 +38,26 @@ public class MainActivity extends AppCompatActivity {
     myRef.addValueEventListener(new ValueEventListener() {
       @Override
       public void onDataChange(DataSnapshot dataSnapshot) {
+        List<User> users = new ArrayList<User>();
         for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
           User user = snapshot.getValue(User.class);
-          Log.d(TAG,"Value is: "+ user.name);
+          users.add(user);
+        }
+        Collections.sort(users,new UserComparator());
+        /*for(int i = 0; i < users.size(); i++){
+          Log.d(TAG,"Value: "+users.get(i).getName());
+        }*/
+        int[] rowUsers = {R.id.user1,R.id.user2,R.id.user3,R.id.user4,R.id.user5};
+        int[] rowDaily = {R.id.user1daily,R.id.user2daily,R.id.user3daily,R.id.user4daily,R.id.user5daily};
+        for(int i = 0; i < rowUsers.length; i++){
+          TextView t = findViewById(rowUsers[i]);
+          if(i < users.size())
+            t.setText(users.get(i).getName());
+        }
+        for(int i = 0; i < rowDaily.length; i++){
+          TextView t = findViewById(rowDaily[i]);
+          if(i < users.size())
+            t.setText(String.valueOf(users.get(i).getScore()));
         }
       }
 
@@ -45,12 +67,14 @@ public class MainActivity extends AppCompatActivity {
         Log.w(TAG, "Failed to read value.", error.toException());
       }
     });
-/*    for(int i = 0; i < 5; i++){
-      int randomId = new Random().nextInt();
-      int randomUser = new Random().nextInt();
-      int randomScore = new Random().nextInt();
-      User user = new User(String.valueOf(randomUser), randomScore);
-      myRef.child(String.valueOf(randomId)).setValue(user);
+
+    // Create users
+/*    for(int i = 2; i < 6; i++){
+      //int randomId = new Random().nextInt();
+      //int randomUser = new Random().nextInt();
+      //int randomScore = new Random().nextInt();
+      User user = new User("User"+String.valueOf(i), 100+i*10);
+      myRef.child(String.valueOf(i)).setValue(user);//String.valueOf(randomId)
     }*/
 
     super.onCreate(savedInstanceState);
@@ -70,6 +94,14 @@ public class MainActivity extends AppCompatActivity {
 
     Intent intent = new Intent(this, StartActivity.class);
     startActivity(intent);
+  }
+
+  public class UserComparator implements Comparator<User> {
+    @Override
+    public int compare(User o1, User o2) {
+      if(o1.getScore() < o2.getScore()) return 1;
+      else return -1;
+    }
   }
 
 }
