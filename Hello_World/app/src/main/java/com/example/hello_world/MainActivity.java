@@ -8,6 +8,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.MutableData;
+import com.google.firebase.database.Transaction;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -32,8 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
-    final FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference().child("users");
+    final DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("users");
 
     myRef.addValueEventListener(new ValueEventListener() {
       @Override
@@ -44,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
           users.add(user);
         }
         Collections.sort(users,new UserComparator());
-        /*for(int i = 0; i < users.size(); i++){
+        for(int i = 0; i < users.size(); i++){
           Log.d(TAG,"Value: "+users.get(i).getName());
-        }*/
+        }
         int[] rowUsers = {R.id.user1,R.id.user2,R.id.user3,R.id.user4,R.id.user5};
         int[] rowDaily = {R.id.user1daily,R.id.user2daily,R.id.user3daily,R.id.user4daily,R.id.user5daily};
         for(int i = 0; i < rowUsers.length; i++){
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         for(int i = 0; i < rowDaily.length; i++){
           TextView t = findViewById(rowDaily[i]);
           if(i < users.size())
-            t.setText(String.valueOf(users.get(i).getScore()));
+            t.setText(String.valueOf(users.get(i).getDailyScore()));
         }
       }
 
@@ -69,11 +70,11 @@ public class MainActivity extends AppCompatActivity {
     });
 
     // Create users
-/*    for(int i = 2; i < 6; i++){
+ /*   for(int i = 1; i < 6; i++){
       //int randomId = new Random().nextInt();
       //int randomUser = new Random().nextInt();
       //int randomScore = new Random().nextInt();
-      User user = new User("User"+String.valueOf(i), 100+i*10);
+      User user = new User("User"+String.valueOf(i), 100+i*10, 100+i*10);
       myRef.child(String.valueOf(i)).setValue(user);//String.valueOf(randomId)
     }*/
 
@@ -85,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
     button1.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
+        //updateScore(2);
         goToStartActivity(v);
       }
     });
@@ -99,9 +101,29 @@ public class MainActivity extends AppCompatActivity {
   public class UserComparator implements Comparator<User> {
     @Override
     public int compare(User o1, User o2) {
-      if(o1.getScore() < o2.getScore()) return 1;
+      if(o1.getDailyScore() < o2.getDailyScore()) return 1;
       else return -1;
     }
+  }
+
+  public static void updateScore(final int value) {
+    DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+    DatabaseReference userRef = rootRef.child("users").child("1");
+    userRef.runTransaction(new Transaction.Handler() {
+      @Override
+      public Transaction.Result doTransaction(MutableData mutableData) {
+        User user = mutableData.getValue(User.class);
+        if (user == null) {
+          return Transaction.success(mutableData);
+        }
+        user.dailyScore += value;
+        mutableData.setValue(user);
+        return Transaction.success(mutableData);
+      }
+
+      @Override
+      public void onComplete(DatabaseError databaseError, boolean b, DataSnapshot dataSnapshot) {}
+    });
   }
 
 }
