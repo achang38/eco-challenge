@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Hello_World</string>
+    <string name="app_name">eco_challenge</string>
     <string name="title_activity_sign_in">SignIn</string>
 </resources>
