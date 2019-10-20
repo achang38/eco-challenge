@@ -35,7 +35,7 @@ import android.widget.ProgressBar;
 
 public class MainActivity extends AppCompatActivity {
 
-  private static int scoreGoal = 250;
+  private static int scoreGoal = 150;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +81,9 @@ public class MainActivity extends AppCompatActivity {
           pb1.setProgress(users.get(i).getTotalScore());
         }
 
+        TextView t = findViewById(R.id.scoreGoal);
+        t.setText("Goal: " + scoreGoal);
+
       }
 
       @Override
@@ -122,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
   public class UserComparator implements Comparator<User> {
     @Override
     public int compare(User o1, User o2) {
-      if(o1.getDailyScore() < o2.getDailyScore()) return 1;
+      if(o1.getTotalScore() < o2.getTotalScore()) return 1;
       else return -1;
     }
   }
